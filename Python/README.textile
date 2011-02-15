@@ -1,0 +1,9 @@
+h1. SelfEducation => Python
+
+Python tasks:
+
+* quadratic
+
+h2. quadratic
+
+Quadratic Equation Calculator

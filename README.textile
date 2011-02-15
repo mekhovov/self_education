@@ -1,0 +1,6 @@
+h1. SelfEducation
+
+* Bash
+* Java
+* Python
+* SilkTest

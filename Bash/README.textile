@@ -1,0 +1,150 @@
+h1. SelfEducation => Bash
+
+ISD AutoTesting Base Course 
+
+* task1
+* task2
+* task3
+* task3_var2
+
+h2. Task1
+
+ In UNIX, create shell script that resets environment: copies hosparam files and database. The shell script should:
+ 
+ Copy database file /A/ASCII/3.11.6/db.311604/ to $UDIR/db/.
+ Parameters passed through command line:
+ -	1 = “/A/ASCII”
+ -	2 = “3.11.6.0.4” (contains release of the product);
+ Parameters defined inside script:
+ -	a = “db.”  
+ -	b = “$UDIR/db/”
+ 
+ Copy all appropriate HOSPARAM files 
+ We have to execute command like:
+ cp A+x1+B+x2  x3
+ where
+ A , B – some constants
+ x1,x2,x3 – some variable parts
+ A = “/A/hosparams/leonard/dict”
+ B =  “hosparams/ACM”
+ 
+  -----------------------------------------------
+  |    x1     |        x2        |      x3       |
+  |-----------|------------------|---------------|
+  |  "lab"    |  "Hosparam.txt"  |  $LABPARAM    |
+  |  "mic"    |  "Hosparam.txt"  |  $MICPARAM    |
+  |  "bb1"    |  "BBparam.txt"   |  $BBPARAM     |
+  |  "path"   |  "Rparam.txt"    |  $RPARAM      |
+  |  "ar"     |  "Hosparam.txt"  |  $ARPARAM     |
+  |  "wld"    |  "Wldparam.txt"  |  $WLDPARAM    |
+  |  "qc"     |  "Hosparam.txt"  |  $QCPARAM     |
+  |  "micqc"  |  "Hosparam.txt"  |  $MICQCPARAM  |
+  |  "don"    |  "DONparam.txt"  |  $DONPARAM    |
+  -----------------------------------------------
+
+ Example of command for first set of values:
+ cp "/A/hosparams/leonard/dict/lib/hosparams/ACM /Baseparam.txt" "$HOSPARAM"
+ Additional constrains: 
+ a.	Script must check that both paths (for source and destination) exist;
+ b.	All above command must not be executed but echoed to screen.
+
+h2. Task2
+
+ Create template for UNIX shell scripts. 
+ Your script has to generate the list of {file option} pairs in case of receiving lists of files and options as command parameters.
+ 	
+ In other case script has to generate the specific information.
+ There are some demands to template:
+ 	1. Parameters
+ 	-	have to be like as : your_command [options] [--] [files]
+ 		[options]	- list of options : opt1,opt2,...,optN;
+ 		[--]		- separator;
+ 		[files]		- list of files : fl1,fl2,...,flM.
+ 	-	"-h" key	: script generates help information
+ 					- autor's name
+ 					- how to use template
+ 				- "-h" must be only first parameter,in that case help will be generated,
+ 				  but in other case "-h" key is usual option parameter.  
+ 	-	"-v" key	: script generates results in non-standard form.
+ 				- "-v" may be situated in any position from options list parameters
+ 				- script understands "-v" as key only for the first time. 
+ 	2. Output information form
+ 	-	Standard form
+ 			fl1 opt1
+ 			fl1 opt2
+ 			........
+ 			fl1 optN
+ 			fl2 opt1
+ 			fl2 opt2
+ 			........
+ 			fl2 optN
+ 			........
+ 			........
+ 			flM opt1
+ 			flM opt2
+ 			........
+ 			flM optN
+ 
+ 	-	Non-standard form
+                         Options are 	 : .../ Message: "No options"
+                         Files are 	 : .../ Message: "No files"
+                         Combinations are: {Standard form}/ Message: "No combinations"
+ 	3. General questions
+ 	-	Pay attention the following some situations:
+ 		- no parameters in command-line
+ 		- not enough parameters in command-line
+ 		- other situations
+
+h2. Task3
+
+ Create script for working with *.rep and *.res files. 
+ 
+ Your script has to:
+ 	-	find all non-empty *.res files which permit write not by owner or group 
+ 	-	print list of *.rep files such as NAME_OF_REP_FILE = NAME_OF_REs_FILE (in generated list of *.res files).
+ 	-	if *.rep file has no *.res equivalent, script has to generate message.
+ There are some demands to script:
+ 	1. Parameters
+ 	-	have to be like as: your_command [path_to_res_folder] [path_to_rep_folder] 
+ 	-	"-h" key	: script generates help information
+ 					- author’s name
+ 					- how to use script
+ 				- "-h" must be only first parameter, in that case help will be generated
+ 	2. Output information form
+ 	[list of *.rep files which satisfy the conditions]
+ 	[list of *.rep files which have not *.res equivalent]
+ 	3. General questions
+ 	-	Pay attention the following some situations:
+ 		- no parameters in command-line
+ 		- not enough parameters in command-line
+ 		- rep or res folder path not exists.
+ 
+ For example we have:
+ 
+ /nethome/artk/artkk/Reports>ls -l .                                             
+ total 0                                                                         
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:17 xy1.rep                
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:17 xy2.rep                
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:18 xy3.rep                
+ 
+ and
+ 
+ /nethome/artk/artkk/Results>ls -l .                                             
+ total 32                                                                        
+ -rwxr--r--   1 artk     artk              6 Oct 27 17:27 xy1.res                
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:21 xy2.res                
+ -rwxrw-rw-   1 artk     artk              6 Oct 27 17:27 xy3.res                
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:22 xy4.res                
+ -rwxrw-rw-   1 artk     artk              4 Oct 27 17:27 xy5.res                
+ -rwxr--r--   1 artk     artk              0 Oct 27 17:27 xy6.res                
+ -rwxr--r--   1 artk     artk              8 Oct 27 17:27 xy7.res                
+ 
+ and then we have:
+ 
+ /nethome/artk/artkk>./reps ./Results ./Reports                                  
+ xy3.rep                                                                         
+ Not found file xy5.rep    
+
+h2. Task3_var2
+
+Just another implementation of Task3

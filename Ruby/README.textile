@@ -1,0 +1,12 @@
+h1. SelfEducation => Ruby
+
+h2. RubyTasks:
+
+* abetka							- syllables creator
+* array_uniq					- uniq for arrays
+* autocomleter				- find methods by some chars
+* city_game						- city (or other topics) game 
+* country_uniq				- uniq for countries array
+* guess_animal_game		- try to guess animal 
+* logger							- more info about object
+

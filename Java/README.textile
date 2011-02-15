@@ -1,0 +1,41 @@
+h1. SelfEducation => Java
+
+Java tasks:
+
+* Task2_SuperSort
+* Task5_PrintMinQuantity
+* Stack
+
+h2. Task2_SuperSort
+
+"ISD Task 2":http://www.isd.dp.ua/sample.html.en
+
+To write a function
+    @char* superSort (char*)@
+which takes a line of words divided with word spaces. Each word can consist of Roman letters of lower case and figures. The returned result must be a line of got words sorted in alphabetical order and divided with word spaces. During sorting when comparing words, figures must be ignored as if there were no figures at all. For example, for input line 
+    @ma79ma 9n8e7 mila r1a2m3u@
+the result of function work has to be 
+    @ma79ma mila 9n8e7 r1a2m3u@
+
+h2. Task5_PrintMinQuantity
+
+"ISD Task 5":http://www.isd.dp.ua/sample.html.en
+
+To write a function
+    @int printMinQuantity (unsigned int input_value)@
+which takes integer input_value and prints on the screen the line of prime numbers divided with word spaces. The sum of these prime numbers is specified value input_value. The number of prime numbers must be minimal so that one can't select shorter series of prime numbers, which make in sum input_value. 
+For example,
+    for number 6 variants "5 1" and "3 3" are considered as correct,
+    variants "3 2 1", "2 2 2", "1 1 1 1 1 1" are considered as incorrect and so on. 
+You have to find not every correct variant, but only one of them. 
+When writing a function pay attention to the algorithm efficiency and to the warranty of the fact that your algorithm finds the shortest of the possible series of prime numbers. 
+
+Suggest a value variant, which is returned by function.
+
+h2. Stack
+
+Stack Implementation
+
+h2. P.S.
+
+Sorry for russian comments

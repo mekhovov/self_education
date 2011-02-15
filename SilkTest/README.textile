@@ -1,0 +1,41 @@
+h1. SelfEducation => SilkTest
+
+ISD AutoTesting Base Course 
+
+* Functions
+* Doctor
+* tc
+
+h2. Functions
+
+1.	Write functions:
+-	First takes STRING and returns its length
+-	Second takes STRING and returns the code of the first symbol
+-	Third has inout parameters STRING and as a result returns a double STRING.
+-	Fourth takes two STRING and call the function of this name and list of arguments
+Review ExecFunc function from ({SilkDir}Common\CMN_Routines.inc)
+
+2.	Create STRING NextStr (in STRING):
+“A” -> “B”, ..., “Z” -> “AA” -> ”AB”, ..., “AZ” -> ”BA”,...,”ZZ” -> ”AAA”,...
+
+3.	Create function:
+WINDOW MyCreateWinclassInstance (in WINDOW f_wParent NULL, in STRING f_sTag, in STRING f_sAsWinclassl)
+Description: Creates winclass instance with specified parent and class
+Arguments:
+-	in WINDOW f_wParent NULL - parent of window. If NULL - no parent.
+-	in STRING f_sTag - tag of window
+-	in STRING f_sAsWinclass optional - as winclass. If omitted then winclass will be winclass of last part in the tag
+Return value:
+-	WINDOW - created window
+Example:
+-	WINDOW w = CreateWinclassInstance (wOrderEntry.dSearch, "[DialogBox]$0/[TextField]Req*/[TextField]#1")
+
+
+h2. Doctor
+
+ Recognize window
+
+h2. TC
+
+ Fill All fields in window
+ 
