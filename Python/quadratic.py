@@ -1,7 +1,7 @@
 from math import sqrt
 
 def calc (**abc):
-	""Quadratic Equation Calculator""
+  "Quadratic Equation Calculator"
   for k, v in abc.iteritems():
     try:
       abc[k] = float(v.replace(',', '.')) if v else 0
